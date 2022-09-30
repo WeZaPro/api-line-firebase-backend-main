@@ -91,14 +91,14 @@ app.post('/api/create', (req,res) => {
         console.log('>>>> userId / convert---> ', data.userId)
         // console.log('>>>> userId', _diaplayName)
         // console.log('>>>> _pictureUrl', _pictureUrl)
-        console.log('path', 'users/' + _userId)
+        console.log('path', 'users/' + data.userId)
         console.log('req.body' + req.body)
 
-        set(ref(db, 'users/' + _userId), {
-            UserId: _userId,
-            // DisplayName: _diaplayName,
-            // PictureUrl: _pictureUrl,
-            // Email: _email,
+        set(ref(db, 'users/' + data.userId), {
+            UserId: data.userId,
+            DisplayName: data.diaplayName,
+            PictureUrl: data.pictureUrl,
+            Email: data.email,
             balance: 100,
             mil: new Date().getTime(),
             date: new Date() + ''
