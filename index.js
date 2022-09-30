@@ -79,11 +79,6 @@ app.get('/api/get', (req, res) => {
 
 //create
 app.post('/api/create', (req,res) => {
-    var _userId = req.body.userId;
-    // var _diaplayName = req.body.diaplayName;
-    // var _pictureUrl = req.body.pictureUrl;
-    // var _email = req.body.email;
-
     var data = req.body;
     console.log('>>>> data', data);
 
@@ -96,6 +91,43 @@ app.post('/api/create', (req,res) => {
 
         // set(ref(db, 'users/' + data.userId), {
             set(ref(db, 'users/' + data.userId+'/'+new Date().getTime()), {
+            UserId: data.userId,
+            DisplayName: data.displayName,
+            PictureUrl: data.pictureUrl,
+            Email: data.email,
+            balance: 100,
+            mil: new Date().getTime(),
+            date: new Date() + ''
+        })
+        return res.status(200).json({
+            RespCode: 200,
+            RespMessage: 'good'
+        })
+    }
+    catch(err) {
+        console.log(err)
+        return res.status(500).json({
+            RespCode: 500,
+            RespMessage: err.message
+        })
+    }
+})
+
+//create--> รับ Package
+app.post('/api/package', (req,res) => {
+    var data = req.body;
+    console.log('>>>> data', data);
+
+    try {
+        console.log('>>>> userId / convert---> ', data.userId)
+        // console.log('>>>> userId', _diaplayName)
+        // console.log('>>>> _pictureUrl', _pictureUrl)
+        console.log('path', 'users/' + data.userId)
+        console.log('req.body' + req.body)
+
+        // set(ref(db, 'users/' + data.userId), {
+            set(ref(db, 'users/' + data.userId+'/'+data.packageName), {
+            PackageName: data.packageName,
             UserId: data.userId,
             DisplayName: data.displayName,
             PictureUrl: data.pictureUrl,

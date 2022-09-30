@@ -84,18 +84,22 @@ app.post('/api/create', (req,res) => {
     // var _pictureUrl = req.body.pictureUrl;
     // var _email = req.body.email;
 
-
+    var data = req.body;
+    console.log('>>>> data', data);
 
     try {
-        console.log('>>>> userId', _userId)
+        console.log('>>>> userId / convert---> ', data.userId)
         // console.log('>>>> userId', _diaplayName)
         // console.log('>>>> _pictureUrl', _pictureUrl)
-        console.log('path', 'users/' + _userId)
-        set(ref(db, 'users/' + _userId), {
-            UserId: _userId,
-            // DisplayName: _diaplayName,
-            // PictureUrl: _pictureUrl,
-            // Email: _email,
+        console.log('path', 'users/' + data.userId)
+        console.log('req.body' + req.body)
+
+        // set(ref(db, 'users/' + data.userId), {
+            set(ref(db, 'users/' + data.userId+'/'+new Date().getTime()), {
+            UserId: data.userId,
+            DisplayName: data.displayName,
+            PictureUrl: data.pictureUrl,
+            Email: data.email,
             balance: 100,
             mil: new Date().getTime(),
             date: new Date() + ''
