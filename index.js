@@ -80,20 +80,20 @@ app.get('/api/get', (req, res) => {
 //create
 app.post('/api/create', (req,res) => {
     var _userId = req.body.userId;
-    var _diaplayName = req.body.diaplayName;
-    var _pictureUrl = req.body.pictureUrl;
-    var _email = req.body.email;
+    // var _diaplayName = req.body.diaplayName;
+    // var _pictureUrl = req.body.pictureUrl;
+    // var _email = req.body.email;
 
     try {
         console.log('>>>> userId', _userId)
-        console.log('>>>> userId', _diaplayName)
-        console.log('>>>> _pictureUrl', _pictureUrl)
+        // console.log('>>>> userId', _diaplayName)
+        // console.log('>>>> _pictureUrl', _pictureUrl)
         console.log('path', 'users/' + _userId)
         set(ref(db, 'users/' + _userId), {
             UserId: _userId,
-            DisplayName: _diaplayName,
-            PictureUrl: _pictureUrl,
-            Email: _email,
+            // DisplayName: _diaplayName,
+            // PictureUrl: _pictureUrl,
+            // Email: _email,
             balance: 100,
             mil: new Date().getTime(),
             date: new Date() + ''
