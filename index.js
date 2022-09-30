@@ -87,6 +87,7 @@ app.post('/api/create', (req,res) => {
     try {
         console.log('>>>> userId', _userId)
         console.log('>>>> userId', _diaplayName)
+        console.log('>>>> _pictureUrl', _pictureUrl)
         console.log('path', 'users/' + _userId)
         set(ref(db, 'users/' + _userId), {
             UserId: _userId,
