@@ -96,7 +96,7 @@ app.post('/api/create', (req,res) => {
 
         set(ref(db, 'users/' + data.userId), {
             UserId: data.userId,
-            //DisplayName: data.displayName,
+            DisplayName: data.displayName,
             PictureUrl: data.pictureUrl,
             Email: data.email,
             balance: 100,
