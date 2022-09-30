@@ -88,7 +88,7 @@ app.post('/api/create', (req,res) => {
     console.log('>>>> data', data);
 
     try {
-        console.log('>>>> userId', _userId)
+        console.log('>>>> userId / convert---> ', data.userId)
         // console.log('>>>> userId', _diaplayName)
         // console.log('>>>> _pictureUrl', _pictureUrl)
         console.log('path', 'users/' + _userId)
