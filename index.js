@@ -94,7 +94,8 @@ app.post('/api/create', (req,res) => {
         console.log('path', 'users/' + data.userId)
         console.log('req.body' + req.body)
 
-        set(ref(db, 'users/' + data.userId), {
+        // set(ref(db, 'users/' + data.userId), {
+            set(ref(db, 'users/' + data.userId+'/'+new Date().getTime()), {
             UserId: data.userId,
             DisplayName: data.displayName,
             PictureUrl: data.pictureUrl,
