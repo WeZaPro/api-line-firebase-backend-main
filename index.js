@@ -84,15 +84,14 @@ app.post('/api/create', (req,res) => {
     // var _pictureUrl = req.body.pictureUrl;
     // var _email = req.body.email;
 
-    var fbResponse = JSON.parse(req.body);
 
     try {
         console.log('>>>> userId', _userId)
         // console.log('>>>> userId', _diaplayName)
         // console.log('>>>> _pictureUrl', _pictureUrl)
         console.log('path', 'users/' + _userId)
-        console.log('fbResponse' + fbResponse)
-        
+        console.log('req.body' + req.body)
+
         set(ref(db, 'users/' + _userId), {
             UserId: _userId,
             // DisplayName: _diaplayName,
