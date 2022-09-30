@@ -10,22 +10,6 @@ const port = process.env.PORT || 3001;
 
 const app = express();
 
-
-// ส่งค่าจาก HTML -> Nodejs
-// const corsOptions = {
-//     origin: port,//'http://localhost:3001',
-//     credentials: true,
-//   };
-// app.use(cors(corsOptions));
-
-// app.use(function(req, res, next) {
-//     res.setHeader('Access-Control-Allow-Origin', '*'); //หรือใส่แค่เฉพาะ domain ที่ต้องการได้
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-//     res.setHeader('Access-Control-Allow-Credentials', true);
-//     next();
-// });
-
 app.use(cors());
 app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Headers, *, Access-Control-Allow-Origin', 'Origin, X-Requested-with, Content_Type,Accept,Authorization','http://localhost:4200');
