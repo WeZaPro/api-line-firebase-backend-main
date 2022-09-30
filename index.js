@@ -95,13 +95,13 @@ app.post('/api/create', (req,res) => {
         console.log('req.body' + req.body)
 
         set(ref(db, 'users/' + data.userId), {
-            "UserId": data.userId,
-            "DisplayName": data.diaplayName,
-            "PictureUrl": data.pictureUrl,
-            "Email": data.email,
-            "balance": 100,
-            "mil": new Date().getTime(),
-            "date": new Date() + ''
+            UserId: data.userId,
+            DisplayName: data.displayName,
+            PictureUrl: data.pictureUrl,
+            Email: data.email,
+            balance: 100,
+            mil: new Date().getTime(),
+            date: new Date() + ''
         })
         return res.status(200).json({
             RespCode: 200,
