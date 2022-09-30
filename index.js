@@ -84,8 +84,8 @@ app.post('/api/create', (req,res) => {
     // var _pictureUrl = req.body.pictureUrl;
     // var _email = req.body.email;
 
-    var jsonA = JSON.parse(req.body);
-    console.log('>>>> json', jsonA);
+    var data = Jreq.body;
+    console.log('>>>> data', data);
 
     try {
         console.log('>>>> userId', _userId)
