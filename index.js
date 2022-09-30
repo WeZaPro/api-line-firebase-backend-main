@@ -126,7 +126,7 @@ app.post('/api/package', (req,res) => {
         console.log('req.body' + req.body)
 
         // set(ref(db, 'users/' + data.userId), {
-            set(ref(db, 'users/' + data.userId+'/'+data.packageName), {
+            set(ref(db, 'users/' + data.userId+'/'+new Date().getTime()+'/'+data.packageName), {
             PackageName: data.packageName,
             UserId: data.userId,
             DisplayName: data.displayName,
