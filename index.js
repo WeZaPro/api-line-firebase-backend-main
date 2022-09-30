@@ -79,7 +79,7 @@ app.get('/api/get', (req, res) => {
 
 //create
 app.post('/api/create', (req,res) => {
-    // var _userId = req.body.userId;
+    var _userId = req.body.userId;
     // var _diaplayName = req.body.diaplayName;
     // var _pictureUrl = req.body.pictureUrl;
     // var _email = req.body.email;
@@ -87,15 +87,17 @@ app.post('/api/create', (req,res) => {
     var fbResponse = JSON.parse(req.body);
 
     try {
-        console.log('>>>> userId', fbResponse.UserId)
+        console.log('>>>> userId', _userId)
         // console.log('>>>> userId', _diaplayName)
         // console.log('>>>> _pictureUrl', _pictureUrl)
-        console.log('path', 'users/' + fbResponse.UserId)
-        set(ref(db, 'users/' + fbResponse.UserId), {
-            UserId: fbResponse.UserId,
-            DisplayName: fbResponse.diaplayName,
-            PictureUrl: fbResponse.pictureUrl,
-            Email: fbResponse.email,
+        console.log('path', 'users/' + _userId)
+        console.log('fbResponse' + fbResponse)
+        
+        set(ref(db, 'users/' + _userId), {
+            UserId: _userId,
+            // DisplayName: _diaplayName,
+            // PictureUrl: _pictureUrl,
+            // Email: _email,
             balance: 100,
             mil: new Date().getTime(),
             date: new Date() + ''
