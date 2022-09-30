@@ -84,7 +84,7 @@ app.post('/api/create', (req,res) => {
     // var _pictureUrl = req.body.pictureUrl;
     // var _email = req.body.email;
 
-    var jsonA = json.bodyParser(req.body);
+    var jsonA = JSON.parse(req.body);
     console.log('>>>> json', jsonA);
 
     try {
